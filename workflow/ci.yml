@@ -1,0 +1,21 @@
+name: CI Workflow
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Code uthao
+        uses: actions/checkout@v4
+
+      - name: Python install karo
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.9'
+
+      - name: Code run karo
+        run: python app.py
